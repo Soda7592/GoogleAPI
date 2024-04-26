@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page1</title>
+
+</head>
+
+<body>
+
+  <h1>PM2.5懸浮微粒查詢網</h1>
+  <div>
+    <form action="/air">
+      <label for="locationInput">請輸入你目前的位置</label>
+      <input type="text" id="locationInput" name="nameis">
+      <button> 送出 </button>
+    </form>
+  </div>
+  <div id="result"></div>
+  <br/>
+  <h2>此地的目前的 PM2.5 懸浮微粒濃度 :  {{namepage['pm2.5']}} </h2>
+  <h2>此地的目前的 PM2.5 空氣狀況 :  {{namepage['status']}} </h2>
+    <a href="https://www.ptepb.gov.tw/News_Content.aspx?n=718A4BD53437A014&sms=29841AE05DB47DEF&s=68C1422CF4E98D1D"> 甚麼是 PM2.5 ? </a>
+  <h2> 針對目前懸浮微粒濃度，建議採取措施如下 :  </h2>
+  <h2> 
+      {%for i in protect%}
+        <tr>
+          <td>
+            {{i}}
+            <br/>
+          </td>
+        </tr>
+      {%endfor%}
+  </h2>
+  <h2>--以上檢測資料由{{namepage['county']}}{{namepage['sitename']}}檢測站提供--</h2>
+</body>
+
+</html>
