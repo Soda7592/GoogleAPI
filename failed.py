@@ -32,7 +32,6 @@ def SearchShortestSite(x1, y1):
 
 
 def SearchPM25(Site):
-    # print(Site)
     url = "https://data.epa.gov.tw/api/v2/aqx_p_488?format=json&offset=0&limit=5&api_key=< api key  >&filters=SiteName,EQ,"
     res = req.get(url + Site)
     data = json.loads(res.content)

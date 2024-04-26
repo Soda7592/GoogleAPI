@@ -32,6 +32,7 @@ county = [
     "南投縣",
 ]
 
+
 l = []
 with open("lnglat.txt", "w") as f:
     with open("location.txt", "w", encoding="utf-8") as fw:
